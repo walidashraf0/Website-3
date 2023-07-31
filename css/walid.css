@@ -8,6 +8,7 @@
 :root {
   --main-color: #2196F3;
   --main-color-alt: #1787E0;
+  --section-background: #ECECEC;
   --main-transition-duration: 0.3s;
   --main-padding: 100px;
 }
@@ -124,6 +125,21 @@ ul {
   -moz-transition-delay: 0.5s;
   -ms-transition-delay: 0.5s;
   -o-transition-delay: 0.5s;
+}
+
+.spikes {
+  position: relative;
+}
+
+.spikes::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 30px;
+  z-index: 1;
+  background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+  background-size: 30px 30px;
 }
 
 /* End Global Rules */
@@ -503,6 +519,234 @@ ul {
 }
 
 /* End Article  */
+/* Start Gallery */
+.gallery {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  position: relative;
+  background-color: var(--section-background);
+}
+
+.gallery .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.gallery .box {
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 13%), 0px 2px 4px 0px rgba(0, 0, 0, 12%);
+}
+
+.gallery .image {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery .image::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: rgb(255 255 255 / 20%);
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.gallery .image:hover::before {
+  animation: flashing 0.7s;
+  -webkit-animation: flashing 0.7s;
+}
+
+.gallery .image img {
+  max-width: 100%;
+  transition: var(--main-transition-duration);
+  -webkit-transition: var(--main-transition-duration);
+  -moz-transition: var(--main-transition-duration);
+  -ms-transition: var(--main-transition-duration);
+  -o-transition: var(--main-transition-duration);
+}
+
+.gallery .image:hover img {
+  transform: rotate(5deg) scale(1.1);
+  -webkit-transform: rotate(5deg) scale(1.1);
+  -moz-transform: rotate(5deg) scale(1.1);
+  -ms-transform: rotate(5deg) scale(1.1);
+  -o-transform: rotate(5deg) scale(1.1);
+}
+
+/* End Gallery */
+/* Start Features */
+.features {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  position: relative;
+  background-color: white;
+}
+
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.features .box {
+  text-align: center;
+  border: 1px solid #CCC;
+}
+
+.features .box .image-holder {
+  position: relative;
+  overflow: hidden;
+}
+
+.features .box .image-holder::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.features .box .image-holder::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0px 0px 170px 500px;
+  border-color: transparent transparent white transparent;
+  transition: var(--main-transition-duration);
+  -webkit-transition: var(--main-transition-duration);
+  -moz-transition: var(--main-transition-duration);
+  -ms-transition: var(--main-transition-duration);
+  -o-transition: var(--main-transition-duration);
+}
+
+.features .box .image-holder img {
+  max-width: 100%;
+}
+
+.features .box:hover .image-holder::after {
+  border-width: 170px 500px 170px 0px;
+}
+
+.features .box h2 {
+  position: relative;
+  font-size: 40px;
+  margin: auto;
+  width: fit-content;
+}
+
+.features .box h2::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 15px;
+  width: calc(100% - 30px);
+  height: 6px;
+}
+
+.features .box p {
+  line-height: 2;
+  font-size: 20px;
+  margin: 30px 0;
+  padding: 25px;
+  color: #777;
+}
+
+.features .box a {
+  display: block;
+  border: 3px solid transparent;
+  width: fit-content;
+  margin: 0 auto 30px;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 10px 30px;
+  transition: var(--main-transition-duration);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-transition: var(--main-transition-duration);
+  -moz-transition: var(--main-transition-duration);
+  -ms-transition: var(--main-transition-duration);
+  -o-transition: var(--main-transition-duration);
+}
+
+.features .quality .image-holder::before {
+  background-color: rgb(244 64 54 / 60%);
+}
+
+.features .quality h2::after {
+  background-color: #f44036;
+}
+
+.features .quality a {
+  color: #f44036;
+  border-color: #f44036;
+  background: linear-gradient(to right, #f44036 50%, white -50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.features .time .image-holder::before {
+  background-color: rgb(0 150 136 / 60%);
+}
+
+.features .time h2::after {
+  background-color: #009688;
+}
+
+.features .time a {
+  color: #009688;
+  border-color: #009688;
+  background: linear-gradient(to right, #009688 50%, white -50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.features .passion .image-holder::before {
+  background-color: rgb(3 169 244 / 60%);
+}
+
+.features .passion h2::after {
+  background-color: #03a9f4;
+}
+
+.features .passion a {
+  color: #03a9f4;
+  border-color: #03a9f4;
+  background: linear-gradient(to right, #03a9f4 50%, white -50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.features .box:hover a {
+  background-position: left bottom;
+  color: white;
+}
+
+/* End Features  */
+/* Start Testimonials */
+.testimonials {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  position: relative;
+  background-color: var(--section-background);
+}
+
+/* End Testimonials */
 /* Start Animation */
 @keyframes up-and-down {
 
@@ -586,6 +830,21 @@ ul {
     -moz-transform: translateX(10px);
     -ms-transform: translateX(10px);
     -o-transform: translateX(10px);
+  }
 }
+
+@keyframes flashing {
+
+  0%,
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
 }
+
 /* End Animation */
