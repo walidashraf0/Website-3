@@ -63,6 +63,7 @@ ul {
 }
 
 .main-title {
+  text-transform: uppercase;
   margin: 0 auto 80px;
   border: 2px solid black;
   padding: 10px 20px;
@@ -1043,6 +1044,60 @@ gap: 60px 40px;
   -o-transform: skewX(-30deg);
 }
 /* End Services */
+/* Start Skills Section */
+.our-skills {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  position: relative;
+}
+
+.our-skills .container {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .our-skills img {
+    display: none;
+  }
+}
+
+.our-skills .skills {
+  flex: 1;
+}
+
+.our-skills .skills .skill h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.our-skills .skills .skill h3 span {
+  font-size: 12px;
+  border: 1px solid #777;
+  padding: 3px;
+  color: var(--main-color);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.our-skills .the-progress {
+  height: 30px;
+  background-color: #eee;
+  position: relative;
+}
+
+.our-skills .the-progress span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--main-color);
+}
+/* End Skills Section */
 /* Start Animation */
 @keyframes up-and-down {
 
