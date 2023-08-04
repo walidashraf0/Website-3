@@ -1500,13 +1500,3 @@ gap: 60px 40px;
 }
 
 /* End Animation */
-/* إخفاء تنسيقات الوصلة */
-.test a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* إظهار الصورة كروابط */
-.test a img {
-  border: none;
-}
