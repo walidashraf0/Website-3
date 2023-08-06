@@ -215,6 +215,7 @@ ul {
   justify-content: center;
   align-items: center;
   height: 72px;
+  font-weight: 600;
   position: relative;
   color: black;
   overflow: hidden;
@@ -421,8 +422,8 @@ ul {
 
 .landing .image img {
   position: relative;
-  width: 500px;
-  height: 600px;
+  width: 450px;
+  height: 590px;
   animation: up-and-down 5s linear infinite;
   -webkit-animation: up-and-down 5s linear infinite;
 }
@@ -1284,7 +1285,7 @@ ul {
 
 .events .info .time .unit {
   border: 1px solid #D4D4D4;
-  width: 75px;
+  width: 120px;
   text-align: center;
   transition: var(--main-transition-duration);
   border-radius: 6px;
@@ -1313,6 +1314,7 @@ ul {
   color: var(--main-color);
   font-weight: bold;
   text-align: center;
+  overflow: hidden;
 }
 
 .events .info .time span:last-child {
@@ -1814,6 +1816,12 @@ ul {
   padding: 0 20px;
 }
 
+@media (max-width: 767px) {
+  .discount .content {
+    margin-bottom: 20px;
+  }
+}
+
 .discount .content h2 {
   font-size: 40px;
   letter-spacing: -2px;
@@ -1878,6 +1886,15 @@ ul {
   -moz-transition: var(--main-transition-duration);
   -ms-transition: var(--main-transition-duration);
   -o-transition: var(--main-transition-duration);
+}
+
+@media (max-width: 767px) {
+  .discount .form .input {
+    margin-bottom: 18px;
+  }
+  .discount .form textarea.input {
+    height: 220px;
+  }
 }
 
 .discount .form [type="submit"]:hover {
