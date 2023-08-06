@@ -669,9 +669,9 @@ ul {
 
 @media (max-width: 767px) {
   .features .box .image-holder::after {
-    animation: move 0.7s forwards;
-    -webkit-animation: move 0.7s forwards;
-  }
+    animation: move 0.7s 2s forwards;
+    -webkit-animation: move 0.7s 2s forwards;
+}
 }
 
 .features .box h2 {
@@ -773,9 +773,9 @@ ul {
 
 @media (max-width: 767px) {
   .features .box a {
-    animation: move-border 0.7s forwards;
-    -webkit-animation: move-border 0.7s forwards;
-  }
+    animation: move-border 0.7s 2s forwards;
+    -webkit-animation: move-border 0.7s 2s forwards;
+}
 }
 
 /* End Features  */
